@@ -21,6 +21,10 @@ class CalculatorBrain {
         internalProgram.append(operand)
     }
     
+    func addUnaryOperation(symbol: String, operation: (Double) -> Double) {
+        operations[symbol] = Operation.UnaryOperation(operation)
+    }
+    
     private enum Operation {
         case Constant(Double)
         case UnaryOperation((Double) -> Double)
